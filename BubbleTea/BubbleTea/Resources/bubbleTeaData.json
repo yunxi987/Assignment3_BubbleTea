@@ -1,0 +1,73 @@
+{
+    "menu": [
+        {
+            "name": "Lavender Tea",
+            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+        },
+        {
+            "name": "Fresh Grape Tea",
+            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+        },
+        {
+            "name": "Fresh Orange Tea",
+            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+        },
+        {
+            "name": "Fresh Mango Tea",
+            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+        },
+        {
+            "name": "Fresh Peach Tea",
+            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+        },
+        {
+            "name": "Fruit Tea",
+            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+        },
+        {
+            "name": "Milk Tea",
+            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+        },
+        {
+            "name": "Bubble Milk Tea",
+            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+        },
+        {
+            "name": "Matcha Milk Tea",
+            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+        },
+        {
+            "name": "Taro Milk Tea",
+            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+        },
+        {
+            "name": "Chocolate Milk Tea",
+            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+        },
+        {
+            "name": "Flower Tea",
+            "prices": {"Reg": "$5.00", "Large": "$7.00"}
+        },
+        {
+            "name": "Gardenia Tea",
+            "prices": {"Reg": "$5.00", "Large": "$7.00"}
+        },
+        {
+            "name": "Rose Tea",
+            "prices": {"Reg": "$5.00", "Large": "$7.00"}
+        },
+        {
+            "name": "Jasmine Tea",
+            "prices": {"Reg": "$5.00", "Large": "$7.00"}
+        },
+        {
+            "name": "Add-Ons",
+            "options": [
+                {"name": "Jelly", "price": "$1.00"},
+                {"name": "Ice Cream", "price": "$1.00"},
+                {"name": "Pearl", "price": "$1.00"},
+                {"name": "Taro Ball", "price": "$1.00"}
+            ]
+        }
+    ]
+}

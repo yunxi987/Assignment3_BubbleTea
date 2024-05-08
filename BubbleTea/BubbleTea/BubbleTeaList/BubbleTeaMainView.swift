@@ -10,7 +10,7 @@ import SwiftUI
 struct BubbleTeaMainView: View {
     @State private var username: String = ""
     @State private var password: String = ""
-    @State private var showSignUp: Bool = false
+    @State private var showMenuView: Bool = false
     
     var body: some View {
         NavigationView {
@@ -21,47 +21,26 @@ struct BubbleTeaMainView: View {
                     .frame(width: 400,height: 400)
                     .padding()
                 
-                TextField("Username", text: $username)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)  // Limit padding to horizontal only
-                    .frame(maxWidth: 350)
-              
-                SecureField("Password", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)  // Limit padding to horizontal only
-                    .frame(maxWidth: 350)
-                
-                Button(action: loginAction) {
-                    Text("Sign In")
-                        .bold()
-                        .foregroundColor(.white)
-                        .padding(.vertical, 8)  // Reduce vertical padding
-                        .padding(.horizontal, 20)  // Slightly increase horizontal padding for better touch area
-                        .background(Color(hex: "532e07"))
-                        .cornerRadius(10)
-                }
-                .padding(.top, 10)  // Add slight padding on top of the button
-                Spacer()
-                
-                // Toggle for sign in and sign up
-                HStack {
-                    Text(showSignUp ? "Already a member? " : "Not a member yet? ")
-                        .foregroundColor(.black)
-                    NavigationLink(destination: SignUpView()) { // Navigate to SignUpView
-                        Text(showSignUp ? "Sign in" : "Sign up")
-                            .foregroundColor(.blue)
+                NavigationLink(destination: MenuView(), isActive: $showMenuView){
+                    Button(action: {
+                        showMenuView = true
+                    }) {
+                        Text("Start Order")
+                            .bold()
+                            .foregroundColor(.white)
+                            .padding(.vertical, 8)  // Reduce vertical padding
+                            .padding(.horizontal, 20)  // Slightly increase horizontal padding for better touch area
+                            .background(Color(hex: "532e07"))
+                            .cornerRadius(10)
                     }
                 }
                 
+                .padding(.top, 10)  // Add slight padding on top of the button
                 Spacer()
-                
+
             }
             
         }
-    }
-    private func loginAction() {
-        // Handle the login logic here
-        print("Login attempted with username: \(username) and password: \(password)")
     }
 }
     

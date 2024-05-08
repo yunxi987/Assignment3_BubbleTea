@@ -9,7 +9,7 @@ import Foundation
 
 // Observable object class
 class ModelData: ObservableObject {
-    @Published var bubbleTeas: [BubbleTea] = load("bubbleTeaData.json")
+    
 }
 
 // Generic function to load data from a JSON file

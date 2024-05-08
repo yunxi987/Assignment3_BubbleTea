@@ -1,72 +1,88 @@
 {
     "menu": [
         {
+            "id": 1,
             "name": "Lavender Tea",
-            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+            "price": {"Reg": "$8.00", "Large": "$10.00"}
         },
         {
+            "id": 2,
             "name": "Fresh Grape Tea",
-            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+            "price": {"Reg": "$8.00", "Large": "$10.00"}
         },
         {
+            "id": 3,
             "name": "Fresh Orange Tea",
-            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+            "price": {"Reg": "$8.00", "Large": "$10.00"}
         },
         {
+            "id": 4,
             "name": "Fresh Mango Tea",
-            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+            "price": {"Reg": "$8.00", "Large": "$10.00"}
         },
         {
+            "id": 5,
             "name": "Fresh Peach Tea",
-            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+            "price": {"Reg": "$8.00", "Large": "$10.00"}
         },
         {
+            "id": 6,
             "name": "Fruit Tea",
-            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+            "price": {"Reg": "$8.00", "Large": "$10.00"}
         },
         {
+            "id": 7,
             "name": "Milk Tea",
-            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+            "price": {"Reg": "$8.00", "Large": "$10.00"}
         },
         {
+            "id": 8,
             "name": "Bubble Milk Tea",
-            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+            "price": {"Reg": "$8.00", "Large": "$10.00"}
         },
         {
+            "id": 9,
             "name": "Matcha Milk Tea",
-            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+            "price": {"Reg": "$8.00", "Large": "$10.00"}
         },
         {
+            "id": 10,
             "name": "Taro Milk Tea",
-            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+            "price": {"Reg": "$8.00", "Large": "$10.00"}
         },
         {
+            "id": 11,
             "name": "Chocolate Milk Tea",
-            "prices": {"Reg": "$8.00", "Large": "$10.00"}
+            "price": {"Reg": "$8.00", "Large": "$10.00"}
         },
         {
+            "id": 12,
             "name": "Flower Tea",
-            "prices": {"Reg": "$5.00", "Large": "$7.00"}
+            "price": {"Reg": "$5.00", "Large": "$7.00"}
         },
         {
+            "id": 13,
             "name": "Gardenia Tea",
-            "prices": {"Reg": "$5.00", "Large": "$7.00"}
+            "price": {"Reg": "$5.00", "Large": "$7.00"}
         },
         {
+            "id": 14,
             "name": "Rose Tea",
-            "prices": {"Reg": "$5.00", "Large": "$7.00"}
+            "price": {"Reg": "$5.00", "Large": "$7.00"}
         },
         {
+            "id": 15,
             "name": "Jasmine Tea",
-            "prices": {"Reg": "$5.00", "Large": "$7.00"}
+            "price": {"Reg": "$5.00", "Large": "$7.00"}
         },
         {
+            "id": 16,
             "name": "Add-Ons",
-            "options": [
-                {"name": "Jelly", "price": "$1.00"},
-                {"name": "Ice Cream", "price": "$1.00"},
-                {"name": "Pearl", "price": "$1.00"},
-                {"name": "Taro Ball", "price": "$1.00"}
+            "option": [
+                {"id": 101, "name": "Jelly", "price": "$1.00"},
+                {"id": 102, "name": "Ice Cream", "price": "$1.00"},
+                {"id": 103, "name": "Pearl", "price": "$1.00"},
+                {"id": 104, "name": "Taro Ball", "price": "$1.00"}
             ]
         }
     ]

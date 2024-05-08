@@ -8,34 +8,34 @@
 import SwiftUI
 
 struct BubbleTeaMainView: View {
-    @State private var username: String = ""
-    @State private var password: String = ""
-    @State private var showMenuView: Bool = false
-    
+
     var body: some View {
         NavigationView {
             VStack {
                 Image("BubbleTeaLogo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 400,height: 400)
+                    .frame(width: 500,height: 500)
                     .padding()
+                Text("Welcome to Bubble Tea")
+                    .font(.title)
+                    .padding(20)
+                Spacer()
                 
-                NavigationLink(destination: MenuView(), isActive: $showMenuView){
-                    Button(action: {
-                        showMenuView = true
-                    }) {
+                NavigationLink(
+                    destination: MenuView(),
+                    label: {
                         Text("Start Order")
+                            .font(.title)
                             .bold()
                             .foregroundColor(.white)
-                            .padding(.vertical, 8)  // Reduce vertical padding
-                            .padding(.horizontal, 20)  // Slightly increase horizontal padding for better touch area
+                            .padding(.vertical, 25)
+                            .padding(.horizontal, 35)
                             .background(Color(hex: "532e07"))
                             .cornerRadius(10)
-                    }
-                }
-                
-                .padding(.top, 10)  // Add slight padding on top of the button
+                    
+                })
+                .padding(.top, 10)
                 Spacer()
 
             }
@@ -43,7 +43,22 @@ struct BubbleTeaMainView: View {
         }
     }
 }
-    
+
+extension Color {
+    init(hex: String) {
+        let scanner = Scanner(string: hex)
+        scanner.currentIndex = scanner.string.startIndex
+        var rgbValue: UInt64 = 0
+        scanner.scanHexInt64(&rgbValue)
+
+        let r = Double((rgbValue & 0xFF0000) >> 16) / 255.0
+        let g = Double((rgbValue & 0x00FF00) >> 8) / 255.0
+        let b = Double(rgbValue & 0x0000FF) / 255.0
+
+        self.init(red: r, green: g, blue: b)
+    }
+}
+
 
 
 #Preview {

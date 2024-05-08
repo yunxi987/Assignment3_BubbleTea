@@ -7,21 +7,50 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct PayMethodView: View {
     @EnvironmentObject var cartManager: CartManager
+    @State private var selectedMethod = "Cart Pay"
 
     var body: some View {
         VStack {
             Text("Total: \(cartManager.total(), specifier: "%.2f")")
-            Button("Pay Now") {
-                // Payment logic goes here
+                .onAppear {
+                    print("Cart total: \(cartManager.total())")
+                }
+            Picker("Select Payment Method", selection: $selectedMethod) {
+                Text("Cart Pay").tag("Cart Pay")
+                Text("Alipay").tag("Alipay")
             }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding()
+
+            Button("Confirm Payment") {
+                processPayment()
+            }
+            .padding()
+            .foregroundColor(.white)
+            .background(Color.blue)
+            .cornerRadius(10)
         }
-        .navigationTitle("Checkout")
+        .navigationTitle("Payment Methods")
+        .onAppear {
+            print("Payment View Loaded with \(selectedMethod)")
+        }
+    }
+
+    private func processPayment() {
+        print("Payment processed with \(selectedMethod)")
     }
 }
 
 
-#Preview {
-    PayMethodView()
+
+struct PayMethodView_Previews: PreviewProvider {
+    static var previews: some View {
+        PayMethodView()
+            .environmentObject(CartManager())
+    }
 }
+

@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct BubbleTeaApp: App {
+    
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ModelData())
+                .environmentObject(CartManager())
+                
         }
     }
 }

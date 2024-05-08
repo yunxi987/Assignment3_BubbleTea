@@ -12,15 +12,14 @@
 		278A1CC22BE8CA69003EADCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278A1CC12BE8CA69003EADCF /* Assets.xcassets */; };
 		278A1CC52BE8CA69003EADCF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278A1CC42BE8CA69003EADCF /* Preview Assets.xcassets */; };
 		278D22502BE8E5130010B6FC /* BubbleTeaMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D224F2BE8E5130010B6FC /* BubbleTeaMainView.swift */; };
-		278D22552BE8E6FE0010B6FC /* bubbleTeaData.json in Resources */ = {isa = PBXBuildFile; fileRef = 278D22542BE8E6FE0010B6FC /* bubbleTeaData.json */; };
 		278D22582BE8E7E50010B6FC /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D22572BE8E7E50010B6FC /* ModelData.swift */; };
 		278D225A2BE8E7FF0010B6FC /* BubbleTea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D22592BE8E7FF0010B6FC /* BubbleTea.swift */; };
-		278D225C2BE8EA5E0010B6FC /* ColourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D225B2BE8EA5E0010B6FC /* ColourView.swift */; };
 		278D22642BE9C7110010B6FC /* BubbleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D22632BE9C7110010B6FC /* BubbleImage.swift */; };
 		278D22682BEB0C700010B6FC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D22672BEB0C700010B6FC /* MenuView.swift */; };
 		278D226A2BEB100F0010B6FC /* PayMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D22692BEB100F0010B6FC /* PayMethodView.swift */; };
 		278D226C2BEB10270010B6FC /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D226B2BEB10270010B6FC /* CartView.swift */; };
 		278D226E2BEB10480010B6FC /* BubbleTeaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D226D2BEB10480010B6FC /* BubbleTeaDetailView.swift */; };
+		278D22702BEB33C30010B6FC /* BubbleTeaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D226F2BEB33C30010B6FC /* BubbleTeaRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,15 +29,14 @@
 		278A1CC12BE8CA69003EADCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		278A1CC42BE8CA69003EADCF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		278D224F2BE8E5130010B6FC /* BubbleTeaMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTeaMainView.swift; sourceTree = "<group>"; };
-		278D22542BE8E6FE0010B6FC /* bubbleTeaData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bubbleTeaData.json; sourceTree = "<group>"; };
 		278D22572BE8E7E50010B6FC /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		278D22592BE8E7FF0010B6FC /* BubbleTea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTea.swift; sourceTree = "<group>"; };
-		278D225B2BE8EA5E0010B6FC /* ColourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourView.swift; sourceTree = "<group>"; };
 		278D22632BE9C7110010B6FC /* BubbleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleImage.swift; sourceTree = "<group>"; };
 		278D22672BEB0C700010B6FC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		278D22692BEB100F0010B6FC /* PayMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayMethodView.swift; sourceTree = "<group>"; };
 		278D226B2BEB10270010B6FC /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		278D226D2BEB10480010B6FC /* BubbleTeaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTeaDetailView.swift; sourceTree = "<group>"; };
+		278D226F2BEB33C30010B6FC /* BubbleTeaRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTeaRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +102,10 @@
 			children = (
 				278D224F2BE8E5130010B6FC /* BubbleTeaMainView.swift */,
 				278D22672BEB0C700010B6FC /* MenuView.swift */,
-				278D22692BEB100F0010B6FC /* PayMethodView.swift */,
-				278D226B2BEB10270010B6FC /* CartView.swift */,
+				278D226F2BEB33C30010B6FC /* BubbleTeaRow.swift */,
 				278D226D2BEB10480010B6FC /* BubbleTeaDetailView.swift */,
+				278D226B2BEB10270010B6FC /* CartView.swift */,
+				278D22692BEB100F0010B6FC /* PayMethodView.swift */,
 			);
 			path = BubbleTeaList;
 			sourceTree = "<group>";
@@ -114,8 +113,6 @@
 		278D22522BE8E6570010B6FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				278D22542BE8E6FE0010B6FC /* bubbleTeaData.json */,
-				278D225B2BE8EA5E0010B6FC /* ColourView.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -197,7 +194,6 @@
 			files = (
 				278A1CC52BE8CA69003EADCF /* Preview Assets.xcassets in Resources */,
 				278A1CC22BE8CA69003EADCF /* Assets.xcassets in Resources */,
-				278D22552BE8E6FE0010B6FC /* bubbleTeaData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,12 +205,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				278D226C2BEB10270010B6FC /* CartView.swift in Sources */,
-				278D225C2BE8EA5E0010B6FC /* ColourView.swift in Sources */,
 				278D22682BEB0C700010B6FC /* MenuView.swift in Sources */,
 				278D226E2BEB10480010B6FC /* BubbleTeaDetailView.swift in Sources */,
 				278D22502BE8E5130010B6FC /* BubbleTeaMainView.swift in Sources */,
 				278D225A2BE8E7FF0010B6FC /* BubbleTea.swift in Sources */,
 				278D22642BE9C7110010B6FC /* BubbleImage.swift in Sources */,
+				278D22702BEB33C30010B6FC /* BubbleTeaRow.swift in Sources */,
 				278D226A2BEB100F0010B6FC /* PayMethodView.swift in Sources */,
 				278D22582BE8E7E50010B6FC /* ModelData.swift in Sources */,
 				278A1CC02BE8CA67003EADCF /* ContentView.swift in Sources */,

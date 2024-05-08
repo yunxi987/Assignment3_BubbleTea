@@ -10,7 +10,6 @@ import Foundation
 struct BubbleTea: Identifiable {
     var id: String
     var name: String
-    var description: String
     var price: [String: Double]  // Prices for 'Reg' and 'Large'
     var imageName: String
 }
@@ -20,7 +19,7 @@ struct AddOn: Identifiable, Equatable {
     var name: String
     var price: Double
     
-    // Equatable conformance
+    
     static func == (lhs: AddOn, rhs: AddOn) -> Bool {
         return lhs.id == rhs.id && lhs.name == rhs.name && lhs.price == rhs.price
     }
@@ -44,7 +43,11 @@ class CartItem: Identifiable, ObservableObject {
 
 class CartManager: ObservableObject {
     @Published var items: [CartItem] = []
-    
+    @Published var addOns: [AddOn] = [  // Now managing available add-ons directly in CartManager
+            AddOn(id: "jelly", name: "Jelly", price: 1.00),
+            AddOn(id: "pearl", name: "Pearl", price: 1.00),
+            AddOn(id: "taroBall", name: "Taro Ball", price: 1.00)
+        ]
     func addToCart(bubbleTea: BubbleTea, size: String, addOns: [AddOn]) {
         if let index = items.firstIndex(where: { $0.bubbleTea.id == bubbleTea.id && $0.size == size && $0.addOns == addOns }) {
             items[index].quantity += 1
@@ -67,3 +70,4 @@ class CartManager: ObservableObject {
         }
     }
 }
+

@@ -7,29 +7,25 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct MenuView: View {
-    var bubbleTeas: [BubbleTea] = [
-        BubbleTea(id: "1", name: "Jasmine Tea", description: "Fragrant jasmine tea.", price: ["Reg": 5.00, "Large": 7.00], imageName: "JasmineTea"),
-        BubbleTea(id: "2", name: "Bubble Milk Tea", description: "Classic bubble milk tea.", price: ["Reg": 5.00, "Large": 7.00], imageName: "BubbleMilkTea")
-        // Add more teas here
-    ]
-
+    @EnvironmentObject var modelData: ModelData
+    @State private var selectedBubbleTea: BubbleTea?
+    @EnvironmentObject var cartManager: CartManager
+    
     var body: some View {
         NavigationView {
-            List(bubbleTeas, id: \.id) { bubbleTea in
-                NavigationLink(destination: BubbleTeaDetailView(bubbleTea: bubbleTea)) {
-                    VStack(alignment: .leading) {
-                        BubbleImage(image: Image(bubbleTea.imageName))
-                        Text(bubbleTea.name)
-                            .font(.headline)
-                        Text("From \(bubbleTea.price["Reg"]!, specifier: "%.2f") - \(bubbleTea.price["Large"]!, specifier: "%.2f")")
-                            .font(.subheadline)
-                    }
+            List(modelData.bubbleTeas, id: \.id) { bubbleTea in
+                Button(action: {
+                    self.selectedBubbleTea = bubbleTea
+                }) {
+                    BubbleTeaRow(bubbleTea: bubbleTea)
                 }
+                .padding(-20)
             }
             .navigationTitle("Menu")
+            .sheet(item: $selectedBubbleTea) { tea in
+                BubbleTeaDetailView(bubbleTea: tea)
+            }
         }
     }
 }
@@ -37,6 +33,10 @@ struct MenuView: View {
 
 
 
-#Preview {
-    MenuView()
+struct BubbleTeaList_Previews: PreviewProvider {
+    static var previews: some View {
+        MenuView()
+            .environmentObject(ModelData())
+    }
 }
+

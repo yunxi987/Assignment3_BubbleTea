@@ -12,21 +12,73 @@ struct BubbleTeaDetailView: View {
     var bubbleTea: BubbleTea
     @State private var selectedSize = "Reg"
     @State private var selectedAddOns: [AddOn] = []
+    @State private var navigateToCart = false
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: bubbleTea.imageName))
-                .frame(width: 100, height: 100)
-            Text(bubbleTea.name).font(.title)
-            Text(bubbleTea.description).font(.body)
+            Spacer()
+            Image(bubbleTea.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 200)
+                .padding()
+
+            Text(bubbleTea.name)
+                .font(.title)
+                .padding()
+
             Picker("Size", selection: $selectedSize) {
                 Text("Regular").tag("Reg")
                 Text("Large").tag("Large")
             }
             .pickerStyle(SegmentedPickerStyle())
-            Text("Price: \(bubbleTea.price[selectedSize]!, specifier: "%.2f")")
+            .padding()
+
+            Text("Price: $\(bubbleTea.price[selectedSize] ?? 0, specifier: "%.2f")")
+                .padding()
+
+            
+
+            Spacer()
+
             Button("Add to Cart") {
                 cartManager.addToCart(bubbleTea: bubbleTea, size: selectedSize, addOns: selectedAddOns)
+                navigateToCart = true
+            }
+            .padding()
+            .background(Color.accentColor)
+            .foregroundColor(.white)
+            .cornerRadius(8)
+            .padding()
+            
+            Button("Back") {
+                presentationMode.wrappedValue.dismiss()
+            }
+        }
+    }
+
+    private func toggleAddOn(_ addOn: AddOn) {
+        if selectedAddOns.contains(addOn) {
+            selectedAddOns.removeAll(where: { $0 == addOn })
+        } else {
+            selectedAddOns.append(addOn)
+        }
+    }
+}
+
+struct AddOnView: View {
+    var addOn: AddOn
+    var isSelected: Bool
+    var action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack {
+                Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(isSelected ? .accentColor : .secondary)
+                Text(addOn.name)
+                    .foregroundColor(.primary)
             }
         }
     }
@@ -37,8 +89,8 @@ struct BubbleTeaDetailView_Previews: PreviewProvider {
         BubbleTeaDetailView(bubbleTea: sampleBubbleTea)
             .environmentObject(CartManager())
     }
-    
+
     static var sampleBubbleTea: BubbleTea {
-        BubbleTea(id: "1", name: "Jasmine Tea", description: "Fragrant jasmine tea.", price: ["Reg": 5.00, "Large": 7.00], imageName: "JasmineTea")
+        return ModelData().bubbleTeas.first!
     }
 }

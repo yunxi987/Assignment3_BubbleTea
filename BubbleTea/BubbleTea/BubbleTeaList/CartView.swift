@@ -10,29 +10,91 @@ import SwiftUI
 struct CartView: View {
     @EnvironmentObject var cartManager: CartManager
     @State private var navigateToPayment = false
-
+    
     var body: some View {
         VStack {
             if cartManager.items.isEmpty {
-                Spacer()
-                Text("Cart")
-                    .font(.largeTitle)
-                    .foregroundColor(.gray)
-                Spacer()
+                EmptyCartView()
             } else {
                 List {
                     ForEach(cartManager.items) { cartItem in
-                        HStack {
-                            Text(cartItem.bubbleTea.name)
-                            Spacer()
-                            Text("x\(cartItem.quantity)")
-                            Spacer()
-                            Text("\(cartItem.bubbleTea.price[cartItem.size]!, specifier: "%.2f")")
-                        }
+                        CartItemView(cartItem: cartItem)
                     }
                     .onDelete(perform: deleteItems)
                 }
             }
+            
+            CartTotalView(navigateToPayment: $navigateToPayment)
+        }
+        .navigationTitle("Cart")
+        .navigationBarItems(trailing: EditButton())
+    }
+    
+    private func deleteItems(at offsets: IndexSet) {
+        cartManager.items.remove(atOffsets: offsets)
+    }
+}
+
+struct EmptyCartView: View {
+    var body: some View {
+        VStack {
+            Spacer()
+            Text("Your cart is empty")
+                .font(.title)
+                .foregroundColor(.gray)
+            Spacer()
+        }
+    }
+}
+
+struct CartItemView: View {
+    @ObservedObject var cartItem: CartItem
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(cartItem.bubbleTea.name)
+                .font(.headline)
+            
+            HStack {
+                Text("Size: \(cartItem.size)")
+                Spacer()
+                Text("Sweetness: \(cartItem.sweetness)")
+                Spacer()
+                Text("Ice: \(cartItem.iceLevel)")
+            }
+            .font(.subheadline)
+            
+            if !cartItem.addOns.isEmpty {
+                Text("Add-ons: \(cartItem.addOns.map { $0.name }.joined(separator: ", "))")
+                    .font(.subheadline)
+            }
+            
+            HStack {
+                Text("Quantity: \(cartItem.quantity)")
+                Spacer()
+                Text("$\(cartItem.totalPrice, specifier: "%.2f")")
+            }
+            .font(.subheadline)
+        }
+    }
+}
+
+struct CartTotalView: View {
+    @EnvironmentObject var cartManager: CartManager
+    @Binding var navigateToPayment: Bool
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Total:")
+                    .font(.title)
+                    
+                Spacer()
+                Text("$\(cartManager.total(), specifier: "%.2f")")
+                    .font(.title)
+                    .bold()
+            }
+            .padding()
             
             HStack {
                 Button("Clear All") {
@@ -45,37 +107,18 @@ struct CartView: View {
                     Button("Check Out") {
                         navigateToPayment = true
                     }
-                    .padding()
+                    .bold()
+                    .padding(.vertical)
+                    .frame(width: 150)
                     .foregroundColor(.white)
-                    .background(Color.blue)
+                    .background(Color(hex: "8ba185"))
                     .cornerRadius(8)
                 }
                 .frame(maxWidth: .infinity)
             }
         }
-        .navigationTitle("Cart")
-        .navigationBarItems(trailing: editButton)
-    }
-
-    private var editButton: some View {
-        Button(action: {
-            withAnimation {
-                $cartManager.items.wrappedValue = []
-            }
-        }) {
-            Text("Edit")
-        }
-    }
-    
-    private func deleteItems(at offsets: IndexSet) {
-        offsets.forEach { index in
-            cartManager.items.remove(at: index)
-        }
     }
 }
-
-
-
 
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {

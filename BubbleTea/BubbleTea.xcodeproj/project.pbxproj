@@ -20,6 +20,7 @@
 		278D226C2BEB10270010B6FC /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D226B2BEB10270010B6FC /* CartView.swift */; };
 		278D226E2BEB10480010B6FC /* BubbleTeaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D226D2BEB10480010B6FC /* BubbleTeaDetailView.swift */; };
 		278D22702BEB33C30010B6FC /* BubbleTeaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D226F2BEB33C30010B6FC /* BubbleTeaRow.swift */; };
+		278D22722BF2E87D0010B6FC /* OrderConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D22712BF2E87D0010B6FC /* OrderConfirmationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		278D226B2BEB10270010B6FC /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		278D226D2BEB10480010B6FC /* BubbleTeaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTeaDetailView.swift; sourceTree = "<group>"; };
 		278D226F2BEB33C30010B6FC /* BubbleTeaRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTeaRow.swift; sourceTree = "<group>"; };
+		278D22712BF2E87D0010B6FC /* OrderConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderConfirmationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				278D226D2BEB10480010B6FC /* BubbleTeaDetailView.swift */,
 				278D226B2BEB10270010B6FC /* CartView.swift */,
 				278D22692BEB100F0010B6FC /* PayMethodView.swift */,
+				278D22712BF2E87D0010B6FC /* OrderConfirmationView.swift */,
 			);
 			path = BubbleTeaList;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				278D226A2BEB100F0010B6FC /* PayMethodView.swift in Sources */,
 				278D22582BE8E7E50010B6FC /* ModelData.swift in Sources */,
 				278A1CC02BE8CA67003EADCF /* ContentView.swift in Sources */,
+				278D22722BF2E87D0010B6FC /* OrderConfirmationView.swift in Sources */,
 				278A1CBE2BE8CA67003EADCF /* BubbleTeaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

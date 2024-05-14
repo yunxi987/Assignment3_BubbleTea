@@ -31,7 +31,7 @@ struct BubbleTeaRow: View {
             Spacer()
         }
         .padding(.horizontal, 10)
-        .padding(.vertical, 5)  
+        .padding(.vertical, 5)
     }
 }
 struct BubbleTeaRow_Previews: PreviewProvider {
@@ -46,8 +46,8 @@ struct BubbleTeaRow_Previews: PreviewProvider {
             id: "1",
             name: "Jasmine Tea",
             price: ["Reg": 5.00, "Large": 7.00],
-            imageName: "JasmineTea"
+            imageName: "JasmineTea",
+            category: "Flower Tea"
         )
     }
 }
-

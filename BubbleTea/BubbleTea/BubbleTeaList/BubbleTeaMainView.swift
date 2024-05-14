@@ -8,20 +8,17 @@
 import SwiftUI
 
 struct BubbleTeaMainView: View {
-
+    
     var body: some View {
         NavigationView {
             VStack {
-                Image("BubbleTeaLogo")
+                Spacer()
+                Image("KawaTea")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 500,height: 500)
+                    .frame(width: 600,height: 600)
                     .padding()
-                Text("Welcome to Bubble Tea")
-                    .font(.title)
-                    .padding(20)
-                Spacer()
-                
+   
                 NavigationLink(
                     destination: MenuView(),
                     label: {
@@ -29,16 +26,17 @@ struct BubbleTeaMainView: View {
                             .font(.title)
                             .bold()
                             .foregroundColor(.white)
-                            .padding(.vertical, 25)
-                            .padding(.horizontal, 35)
-                            .background(Color(hex: "532e07"))
+                            .padding(.vertical, 20)
+                            .padding(.horizontal, 30)
+                            .background(Color(hex: "8ba185"))
                             .cornerRadius(10)
                     
                 })
-                .padding(.top, 10)
+                .padding()
                 Spacer()
-
             }
+            .background(.white)
+            .edgesIgnoringSafeArea(.all)
             
         }
     }

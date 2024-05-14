@@ -16,7 +16,7 @@ struct BubbleTeaMainView: View {
                 Image("KawaTea")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 600,height: 600)
+                    .frame(width: 500,height: 500)
                     .padding()
    
                 NavigationLink(

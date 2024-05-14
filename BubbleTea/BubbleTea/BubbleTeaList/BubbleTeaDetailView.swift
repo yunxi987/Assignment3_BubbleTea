@@ -29,12 +29,12 @@ struct BubbleTeaDetailView: View {
                     Image(bubbleTea.imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(height: 200)
+                        .frame(height: 300)
                         .padding()
                     
                     Text(bubbleTea.name)
                         .font(.title)
-                        .padding()
+                        .padding(-10)
                     
                     Picker("Size", selection: $selectedSize) {
                         Text("Regular").tag("Reg")
@@ -123,6 +123,14 @@ struct BubbleTeaDetailView: View {
                     .cornerRadius(8)
                 }
             }
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [Color(hex: "fef9e6"), .white]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+            .edgesIgnoringSafeArea(.all)
         }
     }
         

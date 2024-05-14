@@ -24,6 +24,9 @@ struct OrderConfirmationView: View {
                 .font(.subheadline)
                 .padding()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(hex: "fef9e6"))
+        .edgesIgnoringSafeArea(.all)
         
     }
 }

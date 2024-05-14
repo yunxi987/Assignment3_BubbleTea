@@ -44,6 +44,11 @@ struct EmptyCartView: View {
                 .foregroundColor(.gray)
             Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color(hex: "fef9e6"), .white]), startPoint: .top, endPoint: .bottom)
+        )
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -88,7 +93,7 @@ struct CartTotalView: View {
             HStack {
                 Text("Total:")
                     .font(.title)
-                    
+                
                 Spacer()
                 Text("$\(cartManager.total(), specifier: "%.2f")")
                     .font(.title)
@@ -97,11 +102,16 @@ struct CartTotalView: View {
             .padding()
             
             HStack {
-                Button("Clear All") {
+                Button(action: {
                     cartManager.items.removeAll()
+                }) {
+                    Image(systemName: "trash")
+                        .foregroundColor(.gray)
+                        .frame(maxWidth: 100)
+                        .padding()
                 }
-                .padding()
-                .frame(maxWidth: .infinity)
+                
+                Spacer()
                 
                 NavigationLink(destination: PayMethodView().environmentObject(cartManager), isActive: $navigateToPayment) {
                     Button("Check Out") {
@@ -109,7 +119,7 @@ struct CartTotalView: View {
                     }
                     .bold()
                     .padding(.vertical)
-                    .frame(width: 150)
+                    .frame(width: 200)
                     .foregroundColor(.white)
                     .background(Color(hex: "8ba185"))
                     .cornerRadius(8)
@@ -123,7 +133,7 @@ struct CartTotalView: View {
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
         CartView()
-            .environmentObject(CartManager())  // Ensure this is provided
+            .environmentObject(CartManager())
     }
 }
 

@@ -77,7 +77,9 @@ struct PayMethodView: View {
             }
         }
         .navigationTitle("Payment Methods")
+        
     }
+    
     
     private func processPayment() {
         generateOrderNumber()

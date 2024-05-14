@@ -2,7 +2,7 @@
 //  CartView.swift
 //  BubbleTea
 //
-//  Created by 周灵婧 on 8/5/2024.
+//  Created by Lingjing Zhou on 8/5/2024.
 //
 
 import SwiftUI

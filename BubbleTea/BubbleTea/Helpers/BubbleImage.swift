@@ -2,7 +2,7 @@
 //  BubbleImage.swift
 //  BubbleTea
 //
-//  Created by 周灵婧 on 7/5/2024.
+//  Created by Lingjing Zhou on 7/5/2024.
 //
 
 import SwiftUI

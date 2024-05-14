@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BubbleTeaDetailView: View {
     @EnvironmentObject var cartManager: CartManager
+    @EnvironmentObject var modelData: ModelData
     var bubbleTea: BubbleTea
     @State private var selectedSize = "Reg"
     @State private var selectedAddOns: [AddOn] = []
@@ -67,7 +68,7 @@ struct BubbleTeaDetailView: View {
                         Text("Add-ons（1$ each)")
                             .font(.headline)
                         LazyVGrid(columns: columns, spacing: 10) {
-                            ForEach(cartManager.addOns) { addOn in
+                            ForEach(modelData.addOns) { addOn in
                                 AddOnView(addOn: addOn, isSelected: selectedAddOns.contains(addOn)) {
                                     toggleAddOn(addOn)
                                 }
@@ -178,7 +179,7 @@ struct AddOnView: View {
 struct BubbleTeaDetailView_Previews: PreviewProvider {
     static var previews: some View {
         BubbleTeaDetailView(bubbleTea: sampleBubbleTea)
-            .environmentObject(CartManager())
+            .environmentObject(CartManager(modelData: ModelData()))
     }
 
     static var sampleBubbleTea: BubbleTea {

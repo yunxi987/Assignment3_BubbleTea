@@ -151,6 +151,6 @@ struct CardPayView: View {
 struct PayMethodView_Previews: PreviewProvider {
     static var previews: some View {
         PayMethodView()
-            .environmentObject(CartManager())
+            .environmentObject(CartManager(modelData: ModelData()))
     }
 }

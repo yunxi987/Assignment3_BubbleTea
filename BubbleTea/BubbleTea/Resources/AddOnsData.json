@@ -1,0 +1,33 @@
+[
+    {
+      "id": "jelly",
+      "name": "Jelly",
+      "price": 1.00
+    },
+    {
+      "id": "sago",
+      "name": "Sago",
+      "price": 1.00
+    },
+    {
+      "id": "boba",
+      "name": "Boba",
+      "price": 1.00
+    },
+    {
+      "id": "taro",
+      "name": "Taro",
+      "price": 1.00
+    },
+    {
+      "id": "aloe",
+      "name": "Aloe",
+      "price": 1.00
+    },
+    {
+      "id": "Ai Yu",
+      "name": "Ai Yu",
+      "price": 1.00
+    }
+]
+

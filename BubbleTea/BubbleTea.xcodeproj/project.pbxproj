@@ -21,6 +21,8 @@
 		278D226E2BEB10480010B6FC /* BubbleTeaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D226D2BEB10480010B6FC /* BubbleTeaDetailView.swift */; };
 		278D22702BEB33C30010B6FC /* BubbleTeaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D226F2BEB33C30010B6FC /* BubbleTeaRow.swift */; };
 		278D22722BF2E87D0010B6FC /* OrderConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D22712BF2E87D0010B6FC /* OrderConfirmationView.swift */; };
+		278D22742BF37B360010B6FC /* BubbleTeaData.json in Resources */ = {isa = PBXBuildFile; fileRef = 278D22732BF37B360010B6FC /* BubbleTeaData.json */; };
+		278D22762BF384850010B6FC /* AddOnsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 278D22752BF384850010B6FC /* AddOnsData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		278D226D2BEB10480010B6FC /* BubbleTeaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTeaDetailView.swift; sourceTree = "<group>"; };
 		278D226F2BEB33C30010B6FC /* BubbleTeaRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTeaRow.swift; sourceTree = "<group>"; };
 		278D22712BF2E87D0010B6FC /* OrderConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderConfirmationView.swift; sourceTree = "<group>"; };
+		278D22732BF37B360010B6FC /* BubbleTeaData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BubbleTeaData.json; sourceTree = "<group>"; };
+		278D22752BF384850010B6FC /* AddOnsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AddOnsData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 		278D22522BE8E6570010B6FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				278D22752BF384850010B6FC /* AddOnsData.json */,
+				278D22732BF37B360010B6FC /* BubbleTeaData.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -197,6 +203,8 @@
 			files = (
 				278A1CC52BE8CA69003EADCF /* Preview Assets.xcassets in Resources */,
 				278A1CC22BE8CA69003EADCF /* Assets.xcassets in Resources */,
+				278D22762BF384850010B6FC /* AddOnsData.json in Resources */,
+				278D22742BF37B360010B6FC /* BubbleTeaData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

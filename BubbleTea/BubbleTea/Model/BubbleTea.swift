@@ -6,25 +6,26 @@
 //
 
 import Foundation
+import Combine
 
-struct BubbleTea: Identifiable {
+struct BubbleTea: Identifiable, Codable {
     var id: String
     var name: String
-    var price: [String: Double]  // Prices for 'Reg' and 'Large'
+    var price: [String: Double]  
     var imageName: String
     var category: String
 }
 
-struct AddOn: Identifiable, Equatable {
+struct AddOn: Identifiable, Equatable, Codable {
     var id: String
     var name: String
     var price: Double
-    
     
     static func == (lhs: AddOn, rhs: AddOn) -> Bool {
         return lhs.id == rhs.id && lhs.name == rhs.name && lhs.price == rhs.price
     }
 }
+
 
 class CartItem: Identifiable, ObservableObject {
     var id: String = UUID().uuidString
@@ -51,27 +52,27 @@ class CartItem: Identifiable, ObservableObject {
     }
 }
 
+
 class CartManager: ObservableObject {
     @Published var items: [CartItem] = []
-    @Published var addOns: [AddOn] = [
-        AddOn(id: "jelly", name: "Jelly", price: 1.00),
-        AddOn(id: "sago", name: "Sago", price: 1.00),
-        AddOn(id: "boba", name: "Boba", price: 1.00),
-        AddOn(id: "taro", name: "Taro", price: 1.00),
-        AddOn(id: "aloe", name: "Aloe", price: 1.00),
-        AddOn(id: "Ai Yu", name: "Ai Yu", price: 1.00),
-    ]
+    
+    // Reference to ModelData to access the loaded addOns
+    private var modelData: ModelData
+    
+    // Initialize CartManager with a reference to ModelData
+    init(modelData: ModelData) {
+        self.modelData = modelData
+    }
     
     func addItem(_ item: CartItem) {
-            if let index = items.firstIndex(where: { $0.bubbleTea.id == item.bubbleTea.id && $0.size == item.size && $0.sweetness == item.sweetness && $0.iceLevel == item.iceLevel && $0.addOns == item.addOns }) {
-                items[index].quantity += item.quantity
-            } else {
-                items.append(item)
-            }
+        if let index = items.firstIndex(where: { $0.bubbleTea.id == item.bubbleTea.id && $0.size == item.size && $0.sweetness == item.sweetness && $0.iceLevel == item.iceLevel && $0.addOns == item.addOns }) {
+            items[index].quantity += item.quantity
+        } else {
+            items.append(item)
         }
+    }
     
     func addToCart(bubbleTea: BubbleTea, size: String, sweetness: String, iceLevel: String, addOns: [AddOn], quantity: Int = 1) {
-
         if let index = items.firstIndex(where: {
             $0.bubbleTea.id == bubbleTea.id &&
             $0.size == size &&
@@ -79,10 +80,8 @@ class CartManager: ObservableObject {
             $0.iceLevel == iceLevel &&
             $0.addOns == addOns
         }) {
-            
             items[index].quantity += quantity
         } else {
-            
             let newItem = CartItem(
                 bubbleTea: bubbleTea,
                 size: size,
@@ -94,7 +93,6 @@ class CartManager: ObservableObject {
             items.append(newItem)
         }
     }
-
     
     func removeFromCart(cartItem: CartItem) {
         if let index = items.firstIndex(where: { $0.id == cartItem.id }) {

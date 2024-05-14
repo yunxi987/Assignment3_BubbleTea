@@ -133,7 +133,7 @@ struct CartTotalView: View {
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
         CartView()
-            .environmentObject(CartManager())
+            .environmentObject(CartManager(modelData: ModelData()))
     }
 }
 

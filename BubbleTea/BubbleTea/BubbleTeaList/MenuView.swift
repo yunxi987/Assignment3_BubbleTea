@@ -44,8 +44,8 @@ struct MenuView: View {
                     Text("View Cart")
                 }
         }
-        .environmentObject(modelData)
-        .environmentObject(cartManager)
+        .environmentObject(ModelData())
+        .environmentObject(CartManager(modelData: ModelData()))
     }
 }
 
@@ -94,7 +94,7 @@ struct AllBubbleTeasView: View {
 
     var body: some View {
         NavigationView {
-            List(modelData.allBubbleTeas, id: \.id) { bubbleTea in
+            List(modelData.bubbleTeas, id: \.id) { bubbleTea in  
                 Button(action: {
                     self.selectedBubbleTea = bubbleTea
                 }) {
@@ -114,6 +114,6 @@ struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         MenuView()
             .environmentObject(ModelData())
-            .environmentObject(CartManager())
+            .environmentObject(CartManager(modelData: ModelData()))
     }
 }

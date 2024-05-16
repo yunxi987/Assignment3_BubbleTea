@@ -178,11 +178,14 @@ struct AddOnView: View {
 
 struct BubbleTeaDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        BubbleTeaDetailView(bubbleTea: sampleBubbleTea)
+        BubbleTeaDetailView(bubbleTea: sampleBubbleTea())
+            .environmentObject(ModelData())
             .environmentObject(CartManager(modelData: ModelData()))
+
     }
 
-    static var sampleBubbleTea: BubbleTea {
-        return ModelData().bubbleTeas.first!
+    static func sampleBubbleTea() -> BubbleTea {
+        return ModelData().bubbleTeas.first ?? BubbleTea(id: "0", name: "Error", price: ["Reg": 0.0], imageName: "default_image", category: "Error")
     }
+
 }

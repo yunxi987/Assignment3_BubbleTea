@@ -1,4 +1,4 @@
-### We are developing an in-store milk tea ordering app that streamlines the entire process, from item selection and customization to cart review, payment, and order generation. We aim to provide customers with a convenient, efficient, and user-friendly ordering interface while offering personalized customization options.
+We are developing an in-store milk tea ordering app that streamlines the entire process, from item selection and customization to cart review, payment, and order generation. We aim to provide customers with a convenient, efficient, and user-friendly ordering interface while offering personalized customization options.
 
 ## Product Display
 * Attractive photos of each milk tea.
@@ -17,8 +17,11 @@
 * Collect number provided upon order submission.
 
 ## TeamMembers
+* Lingjing Zhou 24874758
+* Yunxi Li 24694097
+* Yaning Cao 13670777 
 
-## Lingjing Zhou (24874758), Yunxi Li (24694097) and Yaning Cao (13670777) undertook the following work in the development of the BubbleTea milk tea ordering app:
+We undertook the following work in the development of the BubbleTea milk tea ordering app:
 1.Built the overall architecture and project directory structure of the app. The BubbleTea project is divided into four main modules: Helpers, Model, Resources, and Views.
 
 2.Model layer development:
@@ -37,7 +40,7 @@ Designed the data models for the app, including the definition of milk tea produ
 * Divided the app into clear functional modules such as milk tea product browsing, shopping cart, payment, and order confirmation. Created corresponding view files for each functional module, improving the readability and maintainability of the code.
 
 
-## Github Url（https://github.com/yunxi987/Assignment3_BubbleTea）
+## Github Url
 
 https://github.com/yunxi987/Assignment3_BubbleTea
 

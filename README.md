@@ -17,15 +17,15 @@ We are developing an in-store milk tea ordering app that streamlines the entire 
 * Collect number provided upon order submission.
 
 ### TeamMembers
-* Lingjing Zhou 24874758
-* Yunxi Li 24694097
+* Lingjing Zhou 24874758 Lingjing.Zhou@student.uts.edu.au
+* Yunxi Li 24694097 yunxi.li@student.uts.edu.au
 * Yaning Cao 13670777 
 
 We undertook the following work in the development of the BubbleTea milk tea ordering app:
 1. Built the overall architecture and project directory structure of the app. The BubbleTea project is divided into four main modules: Helpers, Model, Resources, and Views (Lingjing, Yunxi, Yaning).
 
 2. Model layer development (Yunxi):
-Designed the data models for the app, including the definition of milk tea products (BubbleTea) and order data (ModelData).
+* Designed the data models for the app, including the definition of milk tea products (BubbleTea) and order data (ModelData).
 
 3. UI interface development (Lingjing):
 * Implemented the UI layout and interaction logic for the milk tea product list pages (BubbleTeaMainView, MenuView, BubbleTeaRow, BubbleTeaDetailView).

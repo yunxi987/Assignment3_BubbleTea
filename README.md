@@ -37,4 +37,7 @@ Classified and managed the resource files, such as images used by the app, in th
 Divided the app into clear functional modules such as milk tea product browsing, shopping cart, payment, and order confirmation. Created corresponding view files for each functional module, improving the readability and maintainability of the code.
 
 
+Github Url
+
+https://github.com/yunxi987/Assignment3_BubbleTea
 

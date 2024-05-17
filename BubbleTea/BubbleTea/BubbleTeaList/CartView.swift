@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// CartView displays the shopping cart interface, showing a list of items added to the cart or a message if the cart is empty.
 struct CartView: View {
     @EnvironmentObject var cartManager: CartManager
     @State private var navigateToPayment = false
@@ -14,13 +15,13 @@ struct CartView: View {
     var body: some View {
         VStack {
             if cartManager.items.isEmpty {
-                EmptyCartView()
+                EmptyCartView() // Shows an empty cart view if there are no items.
             } else {
                 List {
                     ForEach(cartManager.items) { cartItem in
-                        CartItemView(cartItem: cartItem)
+                        CartItemView(cartItem: cartItem) // Displays each cart item.
                     }
-                    .onDelete(perform: deleteItems)
+                    .onDelete(perform: deleteItems) // Enables item deletion with a swipe gesture.
                 }
             }
             
@@ -35,6 +36,7 @@ struct CartView: View {
     }
 }
 
+// EmptyCartView displays a message indicating that the cart is currently empty.
 struct EmptyCartView: View {
     var body: some View {
         VStack {
@@ -52,6 +54,7 @@ struct EmptyCartView: View {
     }
 }
 
+// CartItemView displays detailed information about each item in the shopping cart.
 struct CartItemView: View {
     @ObservedObject var cartItem: CartItem
     

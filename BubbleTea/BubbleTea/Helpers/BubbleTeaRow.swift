@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Define a view that displays a row for a bubble tea item.
 struct BubbleTeaRow: View {
     var bubbleTea: BubbleTea
 
@@ -34,6 +35,8 @@ struct BubbleTeaRow: View {
         .padding(.vertical, 5)
     }
 }
+
+
 struct BubbleTeaRow_Previews: PreviewProvider {
     static var previews: some View {
         BubbleTeaRow(bubbleTea: sampleBubbleTea())

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Define a view that displays all the details about each bubble tea
 struct BubbleTeaDetailView: View {
     @EnvironmentObject var cartManager: CartManager
     @EnvironmentObject var modelData: ModelData
@@ -84,6 +85,7 @@ struct BubbleTeaDetailView: View {
               
                     
                     Button("Add to Cart") {
+                        // This block checks if the item is already in the cart with the exact same properties.
                         if let index = cartManager.items.firstIndex(where: {
                             $0.bubbleTea.id == bubbleTea.id &&
                             $0.size == selectedSize &&
@@ -91,8 +93,10 @@ struct BubbleTeaDetailView: View {
                             $0.iceLevel == selectedIce &&
                             $0.addOns == selectedAddOns
                         }) {
+                            // If the item is found with the same properties, it increments the quantity.
                             cartManager.items[index].quantity += quantity
                         } else {
+                            // If the item is not found, it creates a new CartItem with the selected properties.
                             let newItem = CartItem(
                                 bubbleTea: bubbleTea,
                                 size: selectedSize,

@@ -14,6 +14,7 @@ struct PayMethodView: View {
     @State private var showOrderConfirmation = false
     @State private var orderNumber = ""
     
+    // This view handles the display and interaction with the user's shopping cart, including payment processing.
     var body: some View {
         VStack {
             List {
@@ -80,7 +81,7 @@ struct PayMethodView: View {
         
     }
     
-    
+    // Handles the payment process based on the selected method.
     private func processPayment() {
         generateOrderNumber()
         if selectedMethod == "Card Pay" {
@@ -89,7 +90,7 @@ struct PayMethodView: View {
             showOrderConfirmation = true
         }
     }
-    
+    // Generates a random order number consisting of a letter and three numbers.
     private func generateOrderNumber() {
         let letter = String(UnicodeScalar(Int.random(in: 65...90))!)
         let number = String(format: "%03d", Int.random(in: 0...999))

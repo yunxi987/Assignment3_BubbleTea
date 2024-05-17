@@ -108,7 +108,6 @@
 			children = (
 				278D224F2BE8E5130010B6FC /* BubbleTeaMainView.swift */,
 				278D22672BEB0C700010B6FC /* MenuView.swift */,
-				278D226F2BEB33C30010B6FC /* BubbleTeaRow.swift */,
 				278D226D2BEB10480010B6FC /* BubbleTeaDetailView.swift */,
 				278D226B2BEB10270010B6FC /* CartView.swift */,
 				278D22692BEB100F0010B6FC /* PayMethodView.swift */,
@@ -138,6 +137,7 @@
 		278D22622BE9C6E00010B6FC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				278D226F2BEB33C30010B6FC /* BubbleTeaRow.swift */,
 				278D22632BE9C7110010B6FC /* BubbleImage.swift */,
 			);
 			path = Helpers;

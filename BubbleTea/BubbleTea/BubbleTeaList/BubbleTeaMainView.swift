@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// This SwiftUI view represents the main screen of a bubble tea shop app. 
+// It features a centered image of a tea, a button to start an order, and a hex color extension for custom color settings.
+
 struct BubbleTeaMainView: View {
     
     var body: some View {

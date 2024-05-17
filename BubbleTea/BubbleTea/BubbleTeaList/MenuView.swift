@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+// // Main container for the application's user interface. It holds the various views in a tab-based layout.
 struct MenuView: View {
     @EnvironmentObject var modelData: ModelData
     @State private var selectedBubbleTea: BubbleTea?
@@ -17,9 +19,10 @@ struct MenuView: View {
             HomeView()
                 .tabItem {
                     Image(systemName: "house")
-                    Text("Home")
+                    Text("Home") // Home tab with an icon and text.
                 }
             
+            // Each BubbleTeaListView represents a different category of bubble teas.
             BubbleTeaListView(category: "Fruit Tea")
                 .tabItem {
                     Image(systemName: "leaf.fill")
@@ -49,6 +52,7 @@ struct MenuView: View {
     }
 }
 
+// HomeView shows an overview or dashboard type of screen, typically the first screen the user sees.
 struct HomeView: View {
     var body: some View {
         NavigationView {
@@ -61,6 +65,7 @@ struct HomeView: View {
     }
 }
 
+// Displays a list of bubble teas filtered by category.
 struct BubbleTeaListView: View {
     @EnvironmentObject var modelData: ModelData
     @State private var selectedBubbleTea: BubbleTea?
@@ -88,6 +93,7 @@ struct BubbleTeaListView: View {
     }
 }
 
+// AllBubbleTeasView shows a list of all bubble teas in the model data.
 struct AllBubbleTeasView: View {
     @EnvironmentObject var modelData: ModelData
     @State private var selectedBubbleTea: BubbleTea?

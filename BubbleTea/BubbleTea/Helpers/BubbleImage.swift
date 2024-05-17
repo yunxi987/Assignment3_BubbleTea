@@ -7,9 +7,10 @@
 
 import SwiftUI
 
+// Defines a reusable view for displaying images in a circle.
 struct BubbleImage: View {
     
-    var image: Image
+    var image: Image // Holds the image to be displayed, passed in when the view is instantiated.
     
     var body: some View {
         image

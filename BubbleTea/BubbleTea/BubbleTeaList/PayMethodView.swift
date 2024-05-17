@@ -112,11 +112,6 @@ struct CardPayView: View {
     
     var body: some View {
         VStack {
-            Image("card_pay_image") // Replace with your image name
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding()
-            
             TextField("Cardholder Name", text: $cardholderName)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
